@@ -5,7 +5,7 @@ const config = {
 
 module.exports = () => new Promise((resolve, reject) => {
   MongoClient
-    .connect(config.url, { useNewUrlParser: true }, (err, mongoConnection) =>
+    .connect(config.url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, mongoConnection) =>
       err
       ? reject(err)
       : resolve({
